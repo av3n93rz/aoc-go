@@ -1,14 +1,13 @@
-package day1
+package day2
 
 import (
 	"bufio"
 	"log"
 	"os"
-	"strconv"
 )
 
-func ReadInput() []int {
-	file, err := os.Open("./inputs/day1.txt")
+func ReadInput() []string {
+	file, err := os.Open("./inputs/day2.txt")
 	defer file.Close()
 
 	if err != nil {
@@ -17,13 +16,12 @@ func ReadInput() []int {
 
 	scanner := bufio.NewScanner(file)
 
-	var nums []int
+	var lines []string
 
 	for scanner.Scan() {
 		line := scanner.Text()
-		num, _ := strconv.Atoi(line)
-		nums = append(nums, num)
+		lines = append(lines, line)
 	}
 
-	return nums
+	return lines
 }

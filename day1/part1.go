@@ -1,7 +1,7 @@
-package main
+package day1
 
 func part1Sol() int {
-	inputArray := readInput()
+	inputArray := ReadInput()
 
 	finalNumber := 0
 

@@ -1,10 +1,10 @@
-package main
+package day1
 
 func part2Sol() int {
 
 	m := make(map[int]bool)
 
-	inputArray := readInput()
+	inputArray := ReadInput()
 
 	finalNumber := 0
 	result := false
