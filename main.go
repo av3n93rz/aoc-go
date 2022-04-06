@@ -5,6 +5,7 @@ import (
 
 	"aoc/day1"
 	"aoc/day2"
+	"aoc/day3"
 )
 
 func main() {
@@ -12,4 +13,6 @@ func main() {
 	day1.Solve()
 	fmt.Println("\nDAY-2:")
 	day2.Solve()
+	fmt.Println("\nDAY-3:")
+	day3.Solve()
 }

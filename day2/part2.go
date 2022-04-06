@@ -1,22 +1,22 @@
 package day2
 
-import "fmt"
-
-func part2Sol() int {
+func part2Sol() string {
 	inputArray := ReadInput()
+	res := ""
 
 	for i := 0; i < len(inputArray); i++ {
 		for j := i + 1; j < len(inputArray); j++ {
-			var charsI []rune
-			var charsJ []rune
+			var charsI []string
+			var charsJ []string
 
 			for _, value := range inputArray[i] {
-				charsI = append(charsI, value)
+				charsI = append(charsI, string(value))
 			}
 			for _, value := range inputArray[j] {
-				charsJ = append(charsI, value)
+				charsJ = append(charsJ, string(value))
 			}
 			diff := 0
+
 			for index, value := range charsI {
 				if value != charsJ[index] {
 					diff += 1
@@ -24,10 +24,15 @@ func part2Sol() int {
 			}
 
 			if diff == 1 {
-				fmt.Println(inputArray[i])
-				fmt.Println(inputArray[j])
+				similar := inputArray[j]
+				for index, value := range inputArray[i] {
+					current := string(value)
+					if string(similar[index]) == current {
+						res += current
+					}
+				}
 			}
 		}
 	}
-	return 0
+	return res
 }
